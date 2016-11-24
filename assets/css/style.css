@@ -2,6 +2,8 @@
     Header Styles
 ------------------------------------- */
 h1 {
-    color: deepskyblue;
-    margin-top: 40px;
-}
+  color: deepskyblue;
+  margin-top: 40px; }
+
+p {
+  color: rebeccapurple; }

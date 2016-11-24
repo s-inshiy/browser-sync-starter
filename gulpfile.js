@@ -70,7 +70,17 @@ gulp.task('sprite', function () {
   return spriteData.pipe(gulp.dest('./assets/sprites/'));
 });
 
-//  Default  
-// gulp.task('default', function() {
-//   gulp.start('styles', 'site-js');
-// });
+// Base64
+gulp.task('base64', function () {
+    return gulp.src('./assets/css/style.min.css')
+        .pipe(base64({
+            baseDir: './assets/css',
+            extensions: ['svg'],
+            // exclude:    [/\.server\.(com|net)\/dynamic\//, '--live.jpg'],
+            maxImageSize: 8*1024, // bytes 
+            debug: true
+        }))
+        // .pipe(concat('main.css'))
+        .pipe(gulp.dest('./assets/css'));
+});
+
